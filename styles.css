@@ -1,0 +1,56 @@
+/* 重置默认样式 */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* 导航栏整体样式 */
+.navbar {
+  background: linear-gradient(to right, #FF512F, #DD2476); /* 炫酷的渐变背景色 */
+  padding: 15px 0;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* 添加阴影增加立体感 */
+}
+
+.nav-list {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+}
+
+.nav-item {
+  margin: 0 15px;
+  position: relative;
+}
+
+.nav-item a {
+  text-decoration: none;
+  color: white;
+  font-size: 18px;
+  font-weight: bold;
+  padding: 10px 15px;
+  transition: all 0.3s ease; /* 添加过渡效果，让变化更平滑 */
+}
+
+/* 导航栏链接悬停效果 */
+.nav-item a:hover {
+  background-color: rgba(255, 255, 255, 0.2); /* 鼠标悬停时半透明背景 */
+  border-radius: 5px;
+  transform: translateY(-3px); /* 向上移动一点，营造悬浮感 */
+}
+
+/* 为导航栏链接添加下划线动画效果 */
+.nav-item a::after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 2px;
+  background-color: white;
+  bottom: 0;
+  left: 0;
+  transition: width 0.3s ease;
+}
+
+.nav-item a:hover::after {
+  width: 100%;
+}
