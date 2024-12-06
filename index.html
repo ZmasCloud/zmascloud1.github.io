@@ -3,21 +3,44 @@
 
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="styles.css">
-  <title>Cool Navigation Bar</title>
+  <title>HTML 导航栏</title>
 </head>
 
 <body>
-  <nav class="navbar">
-    <ul class="nav-list">
-      <li class="nav-item"><a href="#">首页</a></li>
-      <li class="nav-item"><a href="#">关于我们</a></li>
-      <li class="nav-item"><a href="#">服务</a></li>
-      <li class="nav-item"><a href="#">案例</a></li>
-      <li class="nav-item"><a href="#">联系我们</a></li>
+  <nav>
+    <ul>
+      <li><a href="#" style="color: #FF5733;">首页</a></li>
+      <li><a href="#" style="color: #33FF57;">关于我们</a></li>
+      <li><a href="#" style="color: #5733FF;">服务</a></li>
+      <li><a href="#" style="color: #FF33E6;">案例</a></li>
+      <li><a href="#" style="color: #33E6FF;">联系我们</a></li>
     </ul>
   </nav>
+
+  <script>
+    // 获取所有导航链接
+    var navLinks = document.querySelectorAll('nav a');
+
+    // 为每个导航链接添加鼠标移入和移出事件
+    navLinks.forEach(function (link) {
+      link.addEventListener('mouseover', function () {
+        // 创建下划线元素
+        var underline = document.createElement('span');
+        underline.style.cssText = "display: block; width: 0; height: 2px; background-color: white; transition: width 0.3s ease;";
+        this.appendChild(underline);
+
+        // 设置下划线宽度为 100%，实现动态效果
+        setTimeout(function () {
+          underline.style.width = '100%';
+        }, 10);
+      });
+
+      link.addEventListener('mouseout', function () {
+        // 移除下划线元素
+        this.removeChild(this.querySelector('span'));
+      });
+    });
+  </script>
 </body>
 
 </html>
